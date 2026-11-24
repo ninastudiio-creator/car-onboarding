@@ -44,13 +44,13 @@
 
   /* ---------- שקף 1 ---------- */
   .s1-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(24px,4.5vw,72px);align-items:start}
-  .ps{display:grid;gap:12px;max-width:64ch}
-  .ps-row{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
-  .ps-row p{font-size:clamp(1.02rem,1.4vw,1.18rem);line-height:1.5;color:var(--ink);padding-top:2px}
-  .ps-row + .ps-row p{color:var(--brand);font-weight:700}
-  .ps-tag{display:inline-block;min-width:72px;text-align:center;font-size:.85rem;font-weight:800;padding:5px 12px;border-radius:999px}
-  .ps-tag.p{background:var(--lav);color:var(--brand);border:1px solid var(--lav-line)}
-  .ps-tag.s{background:var(--yellow);color:var(--brand)}
+  .ps{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .ps-col{padding-inline-end:22px}
+  .ps-col + .ps-col{padding-inline-end:0;padding-inline-start:22px;border-inline-start:1px solid var(--lav-line)}
+  .ps .label{margin-bottom:6px}
+  .ps-t{font-size:1rem;line-height:1.5;color:var(--ink)}
+  .ps-t.s{color:var(--brand);font-weight:700}
+  @media (max-width:640px){.ps{grid-template-columns:1fr}.ps-col{padding:0}.ps-col + .ps-col{padding:14px 0 0;margin-top:14px;border-inline-start:none;border-top:1px solid var(--lav-line)}}
   .label{font-size:.84rem;font-weight:700;color:var(--muted);letter-spacing:.04em;margin-bottom:14px}
   .problems{list-style:none;display:grid;gap:14px;counter-reset:p}
   .problems li{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;counter-increment:p}
@@ -371,7 +371,7 @@
     <span class="bar" aria-hidden="true"></span>
     <div class="s1-grid">
       <div>
-        <div class="ps r"><div class="ps-row"><span class="ps-tag p">הבעיה</span><p>הלקוח עונה על הרבה לפני שהוא מקבל משהו, ובחלק מהשלבים לא ברור לו מה הוא בוחר.</p></div><div class="ps-row"><span class="ps-tag s">הפתרון</span><p>לדייק ניסוחים והסברים בתוך המסכים הקיימים, בלי לגעת בתמחור.</p></div></div>
+        <div class="ps panel r"><div class="ps-col"><p class="label">הבעיה</p><p class="ps-t">הלקוח עונה על הרבה לפני שהוא מקבל משהו, ובחלק מהשלבים לא ברור לו מה הוא בוחר.</p></div><div class="ps-col"><p class="label">הפתרון</p><p class="ps-t s">לדייק ניסוחים והסברים בתוך המסכים הקיימים, בלי לגעת בתמחור.</p></div></div>
 
         <p class="label r" style="margin-top:clamp(24px,4vh,40px)">מה זיהיתי בתהליך</p>
         <ol class="problems">
